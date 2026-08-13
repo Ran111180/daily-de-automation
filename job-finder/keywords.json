@@ -1,0 +1,13 @@
+{
+  "queries": [
+    "senior data engineer snowflake remote",
+    "senior data engineer databricks India",
+    "lead data engineer dbt AWS",
+    "staff data engineer snowflake OR databricks",
+    "data platform engineer senior remote India"
+  ],
+  "exclude_companies": [],
+  "target_locations": ["India", "Remote", "Bangalore", "Hyderabad"],
+  "min_experience": "5 years",
+  "skills": ["Snowflake", "Databricks", "dbt", "Python", "SQL", "AWS", "Spark", "Airflow"]
+}

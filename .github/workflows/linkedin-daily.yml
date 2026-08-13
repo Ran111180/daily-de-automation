@@ -1,0 +1,23 @@
+name: Daily LinkedIn Post
+
+on:
+  schedule:
+    - cron: '30 2 * * *'  # 2:30 AM UTC = 8:00 AM IST
+  workflow_dispatch:  # manual trigger
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Post to LinkedIn
+        env:
+          LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
+          LINKEDIN_PERSON_URN: ${{ secrets.LINKEDIN_PERSON_URN }}
+        run: python linkedin-posts/post_to_linkedin.py
