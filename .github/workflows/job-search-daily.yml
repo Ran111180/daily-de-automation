@@ -1,9 +1,9 @@
-name: Daily Job Search
+name: Daily Job Search (Disabled - Manual Only)
 
 on:
-  schedule:
-    - cron: '30 3 * * *'  # 3:30 AM UTC = 9:00 AM IST
-  workflow_dispatch:  # manual trigger
+  # schedule disabled - using LinkedIn/Naukri native alerts instead
+  # - cron: '30 3 * * *'
+  workflow_dispatch:  # manual trigger only
 
 jobs:
   search:

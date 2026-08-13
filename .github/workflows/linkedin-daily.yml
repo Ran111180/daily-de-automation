@@ -2,7 +2,7 @@ name: Daily LinkedIn Post
 
 on:
   schedule:
-    - cron: '30 2 * * *'  # 2:30 AM UTC = 8:00 AM IST
+    - cron: '30 3 * * *'  # 3:30 AM UTC = 9:00 AM IST
   workflow_dispatch:  # manual trigger
 
 jobs:
