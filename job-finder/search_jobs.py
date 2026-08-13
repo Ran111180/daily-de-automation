@@ -14,8 +14,9 @@ GMAIL_USER = os.environ.get("EMAIL_TO", "ranga.k565@gmail.com")
 GMAIL_APP_PASSWORD = os.environ.get("GMAIL_APP_PASSWORD")
 
 # Keywords to filter relevant jobs
-KEYWORDS = ["data engineer", "snowflake", "databricks", "dbt", "spark", 
-            "airflow", "python", "aws", "etl", "data platform", "analytics engineer"]
+KEYWORDS = ["data engineer", "snowflake", "databricks", "sql", "ssis", "ssrs",
+            "power bi", "data migration", "etl", "dbt", "azure data factory",
+            "data platform", "analytics engineer", "migration", "warehouse"]
 
 # Free job RSS feeds and APIs
 JOB_SOURCES = [
