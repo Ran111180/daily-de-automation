@@ -63,7 +63,16 @@ def post_to_linkedin(text):
 
 def main():
     topics = load_topics()
-    topic = get_todays_topic(topics)
+    
+    # Allow posting a specific topic by title via env var
+    specific_title = os.environ.get("POST_SPECIFIC_TOPIC")
+    if specific_title:
+        topic = next((t for t in topics if specific_title.lower() in t['title'].lower()), None)
+        if not topic:
+            print(f"Topic '{specific_title}' not found. Available: {[t['title'] for t in topics]}")
+            return
+    else:
+        topic = get_todays_topic(topics)
     
     print(f"Today's topic: {topic['title']}")
     print(f"Content length: {len(topic['content'])} chars")
