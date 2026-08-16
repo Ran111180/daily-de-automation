@@ -3,7 +3,12 @@ name: Daily LinkedIn Post
 on:
   schedule:
     - cron: '30 3 * * *'  # 3:30 AM UTC = 9:00 AM IST
-  workflow_dispatch:  # manual trigger
+  workflow_dispatch:
+    inputs:
+      specific_topic:
+        description: 'Post a specific topic by title (leave empty for daily rotation)'
+        required: false
+        default: ''
 
 jobs:
   post:
@@ -20,4 +25,5 @@ jobs:
         env:
           LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
           LINKEDIN_PERSON_URN: ${{ secrets.LINKEDIN_PERSON_URN }}
+          POST_SPECIFIC_TOPIC: ${{ github.event.inputs.specific_topic }}
         run: python linkedin-posts/post_to_linkedin.py
