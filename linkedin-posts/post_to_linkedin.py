@@ -12,7 +12,7 @@ TOPICS_FILE = os.path.join(SCRIPT_DIR, "topics.json")
 
 
 def load_topics():
-    with open(TOPICS_FILE) as f:
+    with open(TOPICS_FILE, encoding="utf-8") as f:
         return json.load(f)
 
 
